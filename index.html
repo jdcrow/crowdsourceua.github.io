@@ -15,6 +15,12 @@
 
     <!-- Custom styles for this template -->
     <link href="./css/carousel.css" rel="stylesheet">
+	
+	<!-- Custom styles for messenger -->
+    <link href="./messenger/css/messenger.css" rel="stylesheet">
+	<link href="./messenger/css/messenger-spinner.css" rel="stylesheet">
+	<link href="./messenger/css/messenger-theme-future.css" rel="stylesheet">
+	
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -36,8 +42,8 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a class="not-implemented" href="#about">About</a></li>
+                <li><a class="not-implemented" href="#contact">Contact</a></li>
                 <!-- Dropdown disabled until needed
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -53,6 +59,10 @@
                 </li>
                 -->
               </ul>
+			  <ul class="nav navbar-nav navbar-right">
+				<li><a href="./signin.html">Sign In</a></li>
+				<li><a href=></a></li>
+			  </ul>
             </div>
           </div>
         </div>
@@ -120,19 +130,19 @@
           <img height="140px" width="140px" class="img-circle" data-src="http://www.utne.com/~/media/Images/UTR/Editorial/Articles/Magazine%20Articles/2012/05-01/Code%20Year%20Get%20With%20the%20Computer%20Programming/Computer-Programming.jpg" src="http://www.utne.com/~/media/Images/UTR/Editorial/Articles/Magazine%20Articles/2012/05-01/Code%20Year%20Get%20With%20the%20Computer%20Programming/Computer-Programming.jpg" alt="Source Code Available">
           <h2>Code</h2>
           <p>See the current up to date source code for CrowdSource.</p>
-          <p><a class="btn btn-default" href="https://github.com/chockleyc/cs495Spring2014" role="button">GitHub &raquo;</a></p>
+          <p><a class="btn btn-default" href="https://github.com/crowdsourceua/crowdsourceua.github.io" role="button">GitHub &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img height="140px" width="140px" class="img-circle" data-src="https://pbs.twimg.com/profile_images/3092003750/9b72a46e957a52740c667f4c64fa5d10.jpeg" src="https://pbs.twimg.com/profile_images/3092003750/9b72a46e957a52740c667f4c64fa5d10.jpeg" alt="Available for Android">
           <h2>Download</h2>
           <p>CrowdSource is availible for Android on the Google Play store.</p>
-          <p><a class="btn btn-default" href="#" role="button">Download &raquo;</a></p>
+          <p><a class="btn btn-default not-implemented" href="#" role="button">Download &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img height="140px" width="140px" class="img-circle" data-src="https://www.facebook.com/photo.php?fbid=10201992512068897&l=2c8ba752f8" src="https://www.facebook.com/photo.php?fbid=10201992512068897&l=2c8ba752f8" alt="The people behind CrowdSource">
           <h2>The Team</h2>
           <p>CrowdSource is built by a small team of UA students.  Meet them here!</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default not-implemented" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
@@ -195,5 +205,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/docs.min.js"></script>
+	<script src="./messenger/js/messenger.min.js"></script>
+	<script src="./messenger/js/messenger-theme-future.js"></script>
+	<script type='text/javascript'>
+		$(document).ready(function() {
+			Messenger.options = {
+				extraClasses: 'messenger-fixed messenger-on-bottom messenger-on-right',
+				theme: 'future'
+			};
+			$('.not-implemented').on('click', function() {
+				Messenger().post({
+					message: 'We apologize but this is not working yet.',
+					type: 'error',
+					showCloseButton: true
+				});
+			});
+		});		
+	</script>
   </body>
 </html>
